@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Bitcoin Donation</h2>
+      <form action="https://btcpayjungle.com/api/v1/invoices" method="POST">
+        <input type="hidden" name="currency" value="USD" />
+        <input
+          type="hidden"
+          name="storeId"
+          value="ApNzMGhbBz6QU9CgXLGnkufEyA17t2KH3hyyCmpX6KiV"
+        />
+        <input name="price" type="number" step="0.00001" placeholder="amount" />
+        <button type="submit">Donate</button>
+      </form>
     </div>
   );
 }
